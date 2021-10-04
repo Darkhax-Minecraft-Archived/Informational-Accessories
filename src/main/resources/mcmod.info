@@ -1,16 +1,17 @@
 [  
    {  
-      "modid":"infoaccessories",
-      "name":"Info Accessories",
+      "modid":"infoaccessoriestweaked",
+      "name":"Info Accessories Tweaked",
       "description":"Trinkets to help you better understand your world.",
       "version":"${version}",
       "mcversion":"${mcversion}",
-      "url":"https://minecraft.curseforge.com/projects/informational-accessories",
+      "url":"https://www.curseforge.com/minecraft/mc-mods/informational-accessories-tweaked",
       "updateUrl":"",
       "authorList":[  
-         "Darkhax"
+         "Darkhax",
+         "BonesTheRabbit"
       ],
-      "credits":"Terraria and Darkosto for the idea.",
+      "credits":"Terraria and Darkosto for the idea. BonesTheRabbit for this fork.",
       "logoFile":"",
       "screenshots":[  
 
