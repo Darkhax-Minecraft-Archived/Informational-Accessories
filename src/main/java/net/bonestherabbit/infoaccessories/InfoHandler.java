@@ -1,12 +1,12 @@
-package net.darkhax.infoaccessories;
+package net.bonestherabbit.infoaccessories;
 
 import java.util.ArrayList;
 import java.util.List;
 
-import net.darkhax.infoaccessories.addons.baubles.BaublesCapabilityHandler;
-import net.darkhax.infoaccessories.info.InfoType;
-import net.darkhax.infoaccessories.items.ItemInfoAccessory;
-import net.darkhax.infoaccessories.ConfigurationHandler;
+import net.bonestherabbit.infoaccessories.addons.baubles.BaublesCapabilityHandler;
+import net.bonestherabbit.infoaccessories.info.InfoType;
+import net.bonestherabbit.infoaccessories.items.ItemInfoAccessory;
+import net.bonestherabbit.infoaccessories.ConfigurationHandler;
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.resources.I18n;
 import net.minecraft.entity.player.EntityPlayer;

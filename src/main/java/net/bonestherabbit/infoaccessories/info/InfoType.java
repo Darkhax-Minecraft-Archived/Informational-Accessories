@@ -1,4 +1,4 @@
-package net.darkhax.infoaccessories.info;
+package net.bonestherabbit.infoaccessories.info;
 
 import java.util.List;
 
@@ -9,9 +9,9 @@ import net.darkhax.bookshelf.lib.MCDate;
 import net.darkhax.bookshelf.util.BlockUtils;
 import net.darkhax.bookshelf.util.PlayerUtils;
 import net.darkhax.bookshelf.util.StackUtils;
-import net.darkhax.infoaccessories.InfoAccessories;
-import net.darkhax.infoaccessories.IntercardinalDirection;
-import net.darkhax.infoaccessories.ConfigurationHandler;
+import net.bonestherabbit.infoaccessories.InfoAccessories;
+import net.bonestherabbit.infoaccessories.IntercardinalDirection;
+import net.bonestherabbit.infoaccessories.ConfigurationHandler;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.init.Items;
 import net.minecraft.item.Item;

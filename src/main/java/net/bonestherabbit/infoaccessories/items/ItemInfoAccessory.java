@@ -1,4 +1,4 @@
-package net.darkhax.infoaccessories.items;
+package net.bonestherabbit.infoaccessories.items;
 
 import java.awt.Color;
 

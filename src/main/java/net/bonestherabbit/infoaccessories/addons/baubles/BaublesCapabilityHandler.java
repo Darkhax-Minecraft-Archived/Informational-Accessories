@@ -1,4 +1,4 @@
-package net.darkhax.infoaccessories.addons.baubles;
+package net.bonestherabbit.infoaccessories.addons.baubles;
 
 import baubles.api.BaubleType;
 import baubles.api.IBauble;
