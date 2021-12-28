@@ -1,4 +1,4 @@
-package net.darkhax.infoaccessories.info;
+package net.bonestherabbit.infoaccessories.info;
 
 import java.util.List;
 
@@ -9,8 +9,9 @@ import net.darkhax.bookshelf.lib.MCDate;
 import net.darkhax.bookshelf.util.BlockUtils;
 import net.darkhax.bookshelf.util.PlayerUtils;
 import net.darkhax.bookshelf.util.StackUtils;
-import net.darkhax.infoaccessories.InfoAccessories;
-import net.darkhax.infoaccessories.IntercardinalDirection;
+import net.bonestherabbit.infoaccessories.InfoAccessories;
+import net.bonestherabbit.infoaccessories.IntercardinalDirection;
+import net.bonestherabbit.infoaccessories.ConfigurationHandler;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.init.Items;
 import net.minecraft.item.Item;
@@ -23,9 +24,9 @@ import net.minecraftforge.fml.common.Optional;
 
 public enum InfoType {
 
-    PLAYER_X(Items.COMPASS, (world, player, left, right) -> left.add(String.format("X: %.3f", player.posX))),
+    PLAYER_X(Items.COMPASS, (world, player, left, right) -> addXInfo(world, player, left)),
     PLAYER_Y(2, (world, player, left, right) -> left.add(String.format("Y: %.3f", player.posY))),
-    PLAYER_Z(Items.COMPASS, (world, player, left, right) -> left.add(String.format("Z: %.3f", player.posZ))),
+    PLAYER_Z(Items.COMPASS, (world, player, left, right) -> addZInfo(world, player, left)),
     DIRECTION(Items.COMPASS, (world, player, left, right) -> addDirectionInfo(world, player, left)),
     CALENDAR(5, (world, player, left, right) -> addDateInfo(world, left)),
     MOVEMENT(0, (world, player, left, right) -> left.add(String.format("Motion X: %.3f Y: %.3f Z: %.3f", player.motionX, player.motionY, player.motionZ))),
@@ -85,6 +86,11 @@ public enum InfoType {
         this.info.applyInfo(world, player, info, debug);
     }
 
+    public boolean isCompass () {
+
+        return (this.item == Items.COMPASS) ? true : false;
+    }
+
     private static void addDateInfo (World world, List<String> infoList) {
 
         final MCDate date = new MCDate(world);
@@ -98,16 +104,34 @@ public enum InfoType {
     }
 
     private static void addDirectionInfo (World world, EntityPlayer player, List<String> info) {
+        if (ConfigurationHandler.compassCoords == true) {
 
-        final int yaw = MathHelper.floor(player.rotationYaw % 360.0F);
+            final int yaw = MathHelper.floor(player.rotationYaw % 360.0F);
 
-        for (final IntercardinalDirection direction : IntercardinalDirection.values()) {
+            for (final IntercardinalDirection direction : IntercardinalDirection.values()) {
 
-            if (direction.isDirection(yaw)) {
+                if (direction.isDirection(yaw)) {
 
-                info.add(String.format("Direction: %s (%d)", direction.getShorthand(), yaw));
-                break;
+                    info.add(String.format("Direction: %s (%d)", direction.getShorthand(), yaw));
+                    break;
+                }
             }
+        }
+    }
+
+    private static void addXInfo (World world, EntityPlayer player, List<String> info) {
+
+        if (ConfigurationHandler.compassCoords == true) {
+
+            info.add(String.format("X: %.3f", player.posX));
+        }
+    }
+
+    private static void addZInfo(World world, EntityPlayer player, List<String> info) {
+
+        if (ConfigurationHandler.compassCoords == true) {
+
+            info.add(String.format("Z: %.3f", player.posZ));
         }
     }
 

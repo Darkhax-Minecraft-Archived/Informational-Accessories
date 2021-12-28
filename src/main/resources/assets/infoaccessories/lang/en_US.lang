@@ -11,4 +11,4 @@ item.infoaccessories.info.accessory.dps.monitor.name=DPS Meter [WIP]
 item.infoaccessories.info.accessory.structure.name=Structure [WIP]
 
 #Tooltip
-tooltip.infoaccessories.lack.item=Item must be in your inventory!
+tooltip.infoaccessories.lack.item=Item must be in your inventory to see info!

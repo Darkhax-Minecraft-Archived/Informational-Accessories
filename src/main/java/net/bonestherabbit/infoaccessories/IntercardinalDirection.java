@@ -1,4 +1,4 @@
-package net.darkhax.infoaccessories;
+package net.bonestherabbit.infoaccessories;
 
 //TODO move this class to bookshelf
 public enum IntercardinalDirection {

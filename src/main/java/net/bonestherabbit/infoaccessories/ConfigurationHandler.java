@@ -1,4 +1,4 @@
-package net.darkhax.infoaccessories;
+package net.bonestherabbit.infoaccessories;
 
 import java.io.File;
 
@@ -8,6 +8,7 @@ public class ConfigurationHandler {
 
     public static Configuration config;
 
+    public static boolean compassCoords = true;
     public static boolean invertF3 = false;
 
     public ConfigurationHandler (File file) {
@@ -18,6 +19,7 @@ public class ConfigurationHandler {
 
     private void syncConfigData () {
 
+        compassCoords = config.getBoolean("compassCoords", Configuration.CATEGORY_GENERAL, true, "When enabled, shows coordinates and direction data on the compass tooltip. Hides this information when disabled.");
         invertF3 = config.getBoolean("invertF3", Configuration.CATEGORY_GENERAL, false, "When enabled, the information of this mod will be shown only when the F3 menu is closed, rather than only when it is open. If enabled the normal f3 menu will not be edited at all.");
 
         if (config.hasChanged()) {
