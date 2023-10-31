@@ -21,6 +21,7 @@ Structure - WIP
 
 Yes, this mod was inspired by the informational accessories from Terraria. The level of inspiration includes several of the items in the mod, and in some cases textures were directly inspired by the Terraria textures. None of the Terraria textures are included in this mod. 
 
-<br></br>
+## 
+
 *Edited by mossy84*  
 *31 October 2023*
