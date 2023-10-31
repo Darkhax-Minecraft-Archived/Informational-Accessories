@@ -99,7 +99,7 @@ public enum InfoType {
 
     private static void addDirectionInfo (World world, EntityPlayer player, List<String> info) {
 
-        private float yawMath = (float) player.rotationYaw % 360.0F;
+        float yawMath = (float) player.rotationYaw % 360.0F;
 
         if (yawMath < 0) {
             yawMath = 360.0F + yawMath;
