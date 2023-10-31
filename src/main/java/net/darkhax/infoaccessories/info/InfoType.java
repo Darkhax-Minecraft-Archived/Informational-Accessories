@@ -99,13 +99,7 @@ public enum InfoType {
 
     private static void addDirectionInfo (World world, EntityPlayer player, List<String> info) {
 
-        float yawMath = (float) player.rotationYaw % 360.0F;
-
-        if (yawMath < 0) {
-            yawMath = 360.0F + yawMath;
-        }
-        
-        final int yaw = MathHelper.floor(yawMath);
+        final int yaw = (player.rotationYaw < 0) ? MathHelper.floor(360 + (player.rotationYaw % 360.0F)) : MathHelper.floor(player.rotationYaw % 360.0F);
 
         for (final IntercardinalDirection direction : IntercardinalDirection.values()) {
 
