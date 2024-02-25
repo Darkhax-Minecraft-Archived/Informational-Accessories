@@ -33,7 +33,7 @@ apply from: 'https://raw.githubusercontent.com/MinecraftModDevelopment/Gradle-Co
 apply from: 'https://raw.githubusercontent.com/MinecraftModDevelopment/Gradle-Collection/master/minecraft/maven.gradle'
 
 loadSecrets()
-version = "${mod_version}" + getBuildNumber()
+version = "${mod_version}" + "11"
 group = "${mod_group}"
 archivesBaseName = "${mod_name}-${version_minecraft}"
 
@@ -56,13 +56,14 @@ repositories {
     maven {
 
         url "http://maven.mcmoddev.com"
+	url "https://cursemaven.com"
     }
 }
 
 dependencies {
 
-    deobfCompile "net.darkhax.bookshelf:Bookshelf-1.12.2:${version_bookshelf}"
-	compile 'com.azanor:Baubles:1.12-1.5.2'
+    compile "curse.maven:Bookshelf.1.12.2-228525:2717168"
+    compile "curse.maven:Baubles-227083:2518667"
 }
 
 processResources {
